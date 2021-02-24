@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css";
+import { useState } from "react";
+import ResultDisplay from "./ResultDisplay/ResultDisplay";
+import KeyPadWrapper from "./KeyPad/KeyPadWrapper";
+import ThemeChanger from "./ThemeChanger/ThemeChanger";
 
-function App() {
+export default function App() {
+  const [displayResult, setDisplayResult] = useState(0);
+  const [isLighttheme, updateTheme] = useState(true);
+
+  const getKeyPadResult = (result) => {
+    setDisplayResult(displayResult => displayResult = result);
+  }
+
+  const toggleTheme = () => {
+    updateTheme(isLighttheme => !isLighttheme);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${isLighttheme ? 'dark' : 'light'}`}>
+      <ResultDisplay result={displayResult} />
+      <KeyPadWrapper postKeyPadResult={getKeyPadResult} />
+      <ThemeChanger isLighttheme={isLighttheme} toggleTheme={toggleTheme} />
     </div>
   );
 }
-
-export default App;

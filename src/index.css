@@ -1,13 +1,80 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App {
+  text-align: center;
+  padding: 10px;
+  width: 65%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+  min-height: 50px;
+  min-width: 50px;
+  font-size: 20px;
+}
+
+.App.light {
+  background: #fff;
+  color: #000;
+}
+
+.App.light button {
+  background: #f0f0f0;
+}
+
+.App.dark {
+  background: #000;
+  color: #fff;
+}
+
+.App.dark button {
+  background: #666;
+  color: #fff;
+}
+
+.App.dark .result {
+  background: #6c7574;
+}
+
+.result {
+  font-size: 22px;
+  background: #defcfb;
+  margin-bottom: 10px;
+  text-align: right;
+  padding: 10px;
+  font-family: monospace;
+}
+
+.keypad {
+  display: grid;
+  grid-gap: 25px 25px;
+  grid-template-columns: auto auto auto auto;
+}
+
+.toggle-sc-btn {
+  width: 20px;
+  font-size: 10px;
+  position: absolute;
+  min-height: 20px;
+  top: 20px;
+  left: 20px;
+}
+
+.toggle-sc-btn.active {
+  background: #687566;
+  color: #fff;
+}
+
+.scientific-calculator-options {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 25px 25px;
+  margin: 20px;
+  justify-content: center;
+}
+
+.theme-change-btn {
+  width: 20px;
+  font-size: 10px;
+  position: absolute;
+  min-height: 28px;
+  top: 20px;
+  left: 75px;
 }
